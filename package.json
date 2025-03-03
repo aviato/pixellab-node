@@ -1,12 +1,13 @@
 {
   "name": "pixellab-node",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Node.js API for interacting with the [Pixel Lab Developer API](http://api.pixellab.ai/v1/docs)",
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "prepublishOnly": "npm run build",
   "engines": {
     "node": ">=18.0.0"
   },
@@ -24,7 +25,9 @@
   "license": "ISC",
   "devDependencies": {
     "@types/node": "^22.13.8",
-    "dotenv": "^16.4.7",
     "typescript": "^5.8.2"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7"
   }
 }

@@ -1,4 +1,4 @@
-import { BalanceResponse, RequestSettings } from '../types';
+import { BalanceResponse, RequestSettings } from "../types";
 
 /**
  * Get the current balance of a Pixellab account.
@@ -13,10 +13,12 @@ import { BalanceResponse, RequestSettings } from '../types';
  * console.log(balance); // { usd: 100 }
  * ```
  */
-export default async function getBalance(requestSettings: RequestSettings): Promise<BalanceResponse> {
+export default async function getBalance(
+  requestSettings: RequestSettings
+): Promise<BalanceResponse> {
   try {
     const res = await fetch(`${requestSettings.baseUrl}/balance`, {
-      method: 'GET',
+      method: "GET",
       headers: requestSettings.headers,
     });
     return res.json() as Promise<BalanceResponse>;
@@ -24,4 +26,3 @@ export default async function getBalance(requestSettings: RequestSettings): Prom
     throw new Error(`Failed to get balance: ${error}`);
   }
 }
-

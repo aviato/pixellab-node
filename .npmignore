@@ -1,0 +1,47 @@
+# Source files (if you're publishing compiled output)
+src/
+
+# Development and build configuration
+tsconfig.json
+.eslintrc*
+.prettierrc*
+jest.config.js
+webpack.config.js
+
+# Version control and CI files
+.git/
+.github/
+.gitignore
+
+# Test files
+tests/
+__tests__/
+*.test.*
+*.spec.*
+
+# Documentation (optional, if you want to exclude)
+docs/
+CONTRIBUTING.md
+
+# Development tooling
+.vscode/
+.idea/
+.editorconfig
+
+# Environment and secrets
+.env*
+*.pem
+
+# Build artifacts
+node_modules/
+coverage/
+.nyc_output/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Misc
+.DS_Store
+thumbs.db

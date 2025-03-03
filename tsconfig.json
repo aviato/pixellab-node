@@ -6,7 +6,6 @@
     "strict": true,
     "module": "commonjs",
     "moduleResolution": "node",
-    "sourceMap": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,

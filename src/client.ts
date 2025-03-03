@@ -1,4 +1,4 @@
-import 'dotenv/config';
+import "dotenv/config";
 import {
   getBalance,
   generatePixFluxImage,
@@ -6,8 +6,8 @@ import {
   animateSkeletonFromSkeleton,
   animateSkeletonFromText,
   rotateImage,
-  inpaintImage
-} from './lib';
+  inpaintImage,
+} from "./lib";
 import {
   AnimateWithSkeletonParams,
   AnimateWithTextParams,
@@ -16,7 +16,7 @@ import {
   PixFluxImageGenerationParams,
   RequestSettings,
   RotateImageParams,
-} from './types';
+} from "./types";
 
 export default class PixelLabClient {
   private apiKey: string | undefined;
@@ -33,7 +33,7 @@ export default class PixelLabClient {
         Authorization: `Bearer ${this.apiKey}`,
       },
       baseUrl: this.baseUrl,
-    }
+    };
   }
 
   async getBalance() {
@@ -64,4 +64,3 @@ export default class PixelLabClient {
     return await inpaintImage(this.requestSettings, params);
   }
 }
-
