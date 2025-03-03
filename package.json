@@ -1,6 +1,6 @@
 {
   "name": "pixellab-node",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Node.js API for interacting with the [Pixel Lab Developer API](http://api.pixellab.ai/v1/docs)",
   "main": "dist/index.js",
   "scripts": {
