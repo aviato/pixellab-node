@@ -1,3 +1,5 @@
+src/
+
 # Development and build configuration
 tsconfig.json
 .eslintrc*
