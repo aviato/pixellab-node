@@ -18,6 +18,7 @@ tests/
 __tests__/
 *.test.*
 *.spec.*
+jest.config.ts
 
 # Documentation (optional, if you want to exclude)
 docs/

@@ -1,8 +1,9 @@
 {
   "name": "pixellab-node",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "Node.js API for interacting with the [Pixel Lab Developer API](http://api.pixellab.ai/v1/docs)",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "clean": "rm -rf dist",
     "prebuild": "npm test && npm run clean",
