@@ -8,6 +8,10 @@ import { AnimateWithTextParams } from "../../src/types";
 import { API } from "../../src/constants";
 
 const mockAnimateSkeletonParams: AnimateWithTextParams = {
+  reference_image: {
+    type: "base64",
+    base64: "mockedImageBase64Data",
+  },
   description: "a spooky skeleton dancing",
   action: "dance",
   image_size: {

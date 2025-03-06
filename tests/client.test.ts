@@ -151,7 +151,7 @@ describe("PixelLabClient", () => {
         image_size: { width: 64, height: 64 },
         view: "side" as CameraView,
         direction: "east" as Direction,
-        reference_image: { type: "base64", base64: "ref-image" },
+        reference_image: { type: "base64" as const, base64: "ref-image" },
       };
       const mockResponse: AnimateSkeletonResponse = {
         images: [

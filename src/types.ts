@@ -135,10 +135,11 @@ export type StyleViewParamsForAnimation = Pick<
 
 export interface AnimateWithTextParams
   extends BaseParams,
-    TextGenerationParams,
-    StyleViewParamsForAnimation,
-    InitImageParams,
-    OptionalInpaintingParams {
+  TextGenerationParams,
+  StyleViewParamsForAnimation,
+  InitImageParams,
+  OptionalInpaintingParams {
+  reference_image: Base64Image;
   /** Action description */
   action: string;
   /** Length of full animation (the model will always generate 4 frames) */
@@ -149,16 +150,16 @@ export interface AnimateWithTextParams
 
 export interface ImageGenerationParams
   extends BaseParams,
-    TextGenerationParams,
-    InitImageParams {
+  TextGenerationParams,
+  InitImageParams {
   /** Percentage of the canvas to cover */
   coverage_percentage?: number;
 }
 
 export interface BitForgeImageGenerationParams
   extends ImageGenerationParams,
-    OptionalInpaintingParams,
-    ProjectionParams {
+  OptionalInpaintingParams,
+  ProjectionParams {
   /** How closely to follow the style reference */
   extra_guidance_scale?: number;
   /** Strength of the style transfer (0-100) */
@@ -168,13 +169,13 @@ export interface BitForgeImageGenerationParams
 
 export interface PixFluxImageGenerationParams
   extends ImageGenerationParams,
-    StyleViewParams {}
+  StyleViewParams { }
 
 export interface RotateImageParams
   extends BaseParams,
-    InitImageParams,
-    OptionalInpaintingParams,
-    ProjectionParams {
+  InitImageParams,
+  OptionalInpaintingParams,
+  ProjectionParams {
   from_image: Base64Image;
   from_view?: CameraView;
   to_view?: CameraView;
@@ -186,9 +187,9 @@ export interface RotateImageParams
 
 export interface AnimateFromSkeletonParams
   extends BaseParams,
-    InitImageParams,
-    ProjectionParams,
-    StyleViewParamsForAnimation {
+  InitImageParams,
+  ProjectionParams,
+  StyleViewParamsForAnimation {
   reference_image: Base64Image;
   /** Skeleton points */
   skeleton_keypoints?: SkeletonKeypoints;
@@ -201,9 +202,9 @@ export interface AnimateFromSkeletonParams
 
 export interface InpaintImageParams
   extends BaseParams,
-    TextGenerationParams,
-    InitImageParams,
-    ProjectionParams {
+  TextGenerationParams,
+  InitImageParams,
+  ProjectionParams {
   /** Image to inpaint */
   inpainting_image: Base64Image;
   /** Mask image */
