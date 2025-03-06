@@ -1,4 +1,4 @@
-import { API } from "../../constants";
+import { API } from "../constants";
 import {
   AnimateSkeletonResponse,
   AnimateWithTextParams,

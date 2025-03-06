@@ -1,4 +1,4 @@
-import { API } from "../../constants";
+import { API } from "../../src/constants";
 import generateBitForgeImage from "../../src/lib/generateBitForgeImage";
 import { BitForgeImageGenerationParams } from "../../src/types";
 import {

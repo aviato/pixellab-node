@@ -21,7 +21,7 @@ import {
   RequestSettings,
   RotateImageParams,
 } from "./types";
-import { API } from "../constants";
+import { API } from "./constants";
 
 export default class PixelLabClient {
   private apiKey: string | undefined;

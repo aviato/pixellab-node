@@ -1,4 +1,4 @@
-import { API } from "../../constants";
+import { API } from "../../src/constants";
 import generatePixFluxImage from "../../src/lib/generatePixFluxImage";
 import { PixFluxImageGenerationParams } from "../../src/types";
 import {

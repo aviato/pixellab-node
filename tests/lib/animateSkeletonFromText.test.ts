@@ -5,7 +5,7 @@ import {
   createMockClientSettings,
 } from "../utils";
 import { AnimateWithTextParams } from "../../src/types";
-import { API } from "../../constants";
+import { API } from "../../src/constants";
 
 const mockAnimateSkeletonParams: AnimateWithTextParams = {
   description: "a spooky skeleton dancing",

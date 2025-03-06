@@ -1,4 +1,4 @@
-import { API } from "../../constants";
+import { API } from "../../src/constants";
 import getBalance from "../../src/lib/getBalance";
 import {
   mockFetchSuccess,

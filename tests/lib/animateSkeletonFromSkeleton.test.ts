@@ -6,7 +6,7 @@ import {
 } from "../utils";
 import { AnimateFromSkeletonParams, SkeletonKeypoints } from "../../src/types";
 import mockSkeletonKeypoints from "../data/mockSkeletonKeypoints.json";
-import { API } from "../../constants";
+import { API } from "../../src/constants";
 
 const mockAnimateSkeletonParams: AnimateFromSkeletonParams = {
   reference_image: {

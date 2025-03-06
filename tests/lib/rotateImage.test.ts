@@ -5,7 +5,7 @@ import {
   createMockClientSettings,
 } from "../utils";
 import { RotateImageParams, ImageGenerationResponse } from "../../src/types";
-import { API } from "../../constants";
+import { API } from "../../src/constants";
 
 const mockRotateImageParams: RotateImageParams = {
   from_image: {

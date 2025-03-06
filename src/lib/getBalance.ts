@@ -1,4 +1,4 @@
-import { API } from "../../constants";
+import { API } from "../constants";
 import { BalanceResponse, RequestSettings } from "../types";
 
 export default async function getBalance(

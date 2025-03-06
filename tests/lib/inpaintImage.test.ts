@@ -5,7 +5,7 @@ import {
   createMockClientSettings,
 } from "../utils";
 import { InpaintImageParams } from "../../src/types";
-import { API } from "../../constants";
+import { API } from "../../src/constants";
 
 const mockInpaintImageParams: InpaintImageParams = {
   description: "a cat wearing a crown",
