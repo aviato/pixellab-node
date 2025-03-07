@@ -192,7 +192,7 @@ export interface AnimateFromSkeletonParams
   StyleViewParamsForAnimation {
   reference_image: Base64Image;
   /** Skeleton points */
-  skeleton_keypoints?: SkeletonKeypoints;
+  skeleton_keypoints: SkeletonKeypoints;
   /** How closely to follow the reference image and skeleton keypoints */
   guidance_scale?: number;
   inpainting_images?: Base64Image[];
