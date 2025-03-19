@@ -7,7 +7,7 @@ import {
   animateSkeletonFromText,
   rotateImage,
   inpaintImage,
-} from "./lib";
+} from "./lib/index.js";
 
 import {
   AnimateSkeletonResponse,
@@ -20,8 +20,8 @@ import {
   PixFluxImageGenerationParams,
   RequestSettings,
   RotateImageParams,
-} from "./types";
-import { API } from "./constants";
+} from "./types.js";
+import { API } from "./constants.js";
 
 export default class PixelLabClient {
   private apiKey: string | undefined;

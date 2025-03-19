@@ -1,11 +1,12 @@
-import { API } from "../../src/constants";
-import generateBitForgeImage from "../../src/lib/generateBitForgeImage";
-import { BitForgeImageGenerationParams } from "../../src/types";
+import { beforeAll, describe, expect, it } from 'vitest';
+import { API } from "../../src/constants.js";
+import generateBitForgeImage from "../../src/lib/generateBitForgeImage.js";
+import { BitForgeImageGenerationParams } from "../../src/types.js";
 import {
   mockFetchSuccess,
   mockFetchNetworkError,
   createMockClientSettings,
-} from "../utils";
+} from "../utils/index.js";
 
 const mockBitForgeImageGenerationParams: BitForgeImageGenerationParams = {
   description: "a cat playing piano",

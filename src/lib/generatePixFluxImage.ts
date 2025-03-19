@@ -1,9 +1,9 @@
-import { API } from "../constants";
+import { API } from "../constants.js";
 import {
   ImageGenerationResponse,
   PixFluxImageGenerationParams,
   RequestSettings,
-} from "../types";
+} from "../types.js";
 
 export default async function generatePixfluxImage(
   clientSettings: RequestSettings,

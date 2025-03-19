@@ -1,27 +1,37 @@
-import PixelLabClient from "../src/client";
-import * as lib from "../src/lib";
+import {
+  afterAll,
+  beforeAll,
+  beforeEach,
+  describe,
+  expect,
+  it,
+  vi,
+  Mock,
+} from "vitest";
+import PixelLabClient from "../src/client.js";
+import * as lib from "../src/lib/index.js";
 import {
   AnimateSkeletonResponse,
   CameraView,
   Direction,
   ImageGenerationResponse,
-} from "../src/types";
+} from "../src/types.js";
 
-jest.mock("../src/lib", () => ({
-  getBalance: jest.fn(),
-  generatePixFluxImage: jest.fn(),
-  generateBitForgeImage: jest.fn(),
-  animateSkeletonFromSkeleton: jest.fn(),
-  animateSkeletonFromText: jest.fn(),
-  rotateImage: jest.fn(),
-  inpaintImage: jest.fn(),
+vi.mock("../src/lib", () => ({
+  getBalance: vi.fn(),
+  generatePixFluxImage: vi.fn(),
+  generateBitForgeImage: vi.fn(),
+  animateSkeletonFromSkeleton: vi.fn(),
+  animateSkeletonFromText: vi.fn(),
+  rotateImage: vi.fn(),
+  inpaintImage: vi.fn(),
 }));
 
 const originalEnv = process.env;
 
 describe("PixelLabClient", () => {
   beforeEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
     process.env = { ...originalEnv };
   });
 
@@ -50,7 +60,7 @@ describe("PixelLabClient", () => {
   describe("getBalance", () => {
     it("should call lib.getBalance with correct settings", async () => {
       const mockResponse = { usd: 100 };
-      (lib.getBalance as jest.Mock).mockResolvedValue(mockResponse);
+      (lib.getBalance as Mock).mockResolvedValue(mockResponse);
 
       const client = new PixelLabClient();
       const result = await client.getBalance();
@@ -75,7 +85,8 @@ describe("PixelLabClient", () => {
         image: { type: "base64", base64: "image-data" },
         usage: { type: "usd", usd: 0.01 },
       };
-      (lib.generatePixFluxImage as jest.Mock).mockResolvedValue(mockResponse);
+
+      (lib.generatePixFluxImage as Mock).mockResolvedValue(mockResponse);
 
       const client = new PixelLabClient();
       const result = await client.generatePixFluxImage(mockParams);
@@ -100,7 +111,7 @@ describe("PixelLabClient", () => {
         image: { type: "base64", base64: "image-data" },
         usage: { type: "usd", usd: 0.02 },
       };
-      (lib.generateBitForgeImage as jest.Mock).mockResolvedValue(mockResponse);
+      (lib.generateBitForgeImage as Mock).mockResolvedValue(mockResponse);
 
       const client = new PixelLabClient();
       const result = await client.generateBitForgeImage(mockParams);
@@ -126,9 +137,7 @@ describe("PixelLabClient", () => {
         images: [{ type: "base64", base64: "frame1" }],
         usage: { type: "usd", usd: 0.03 },
       };
-      (lib.animateSkeletonFromSkeleton as jest.Mock).mockResolvedValue(
-        mockResponse
-      );
+      (lib.animateSkeletonFromSkeleton as Mock).mockResolvedValue(mockResponse);
 
       const client = new PixelLabClient();
       const result = await client.animateSkeletonFromSkeleton(mockParams);
@@ -161,9 +170,7 @@ describe("PixelLabClient", () => {
         ],
         usage: { type: "usd", usd: 0.04 },
       };
-      (lib.animateSkeletonFromText as jest.Mock).mockResolvedValue(
-        mockResponse
-      );
+      (lib.animateSkeletonFromText as Mock).mockResolvedValue(mockResponse);
 
       const client = new PixelLabClient();
       const result = await client.animateSkeletonFromText(mockParams);
@@ -189,7 +196,7 @@ describe("PixelLabClient", () => {
         image: { type: "base64", base64: "rotated-image" },
         usage: { type: "usd", usd: 0.005 },
       };
-      (lib.rotateImage as jest.Mock).mockResolvedValue(mockResponse);
+      (lib.rotateImage as Mock).mockResolvedValue(mockResponse);
 
       const client = new PixelLabClient();
       const result = await client.rotateImage(mockParams);
@@ -216,7 +223,7 @@ describe("PixelLabClient", () => {
         image: { type: "base64", base64: "inpainted-image" },
         usage: { type: "usd", usd: 0.03 },
       };
-      (lib.inpaintImage as jest.Mock).mockResolvedValue(mockResponse);
+      (lib.inpaintImage as Mock).mockResolvedValue(mockResponse);
 
       const client = new PixelLabClient();
       const result = await client.inpaintImage(mockParams);

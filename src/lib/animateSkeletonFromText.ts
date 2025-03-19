@@ -1,9 +1,9 @@
-import { API } from "../constants";
+import { API } from "../constants.js";
 import {
   AnimateSkeletonResponse,
   AnimateWithTextParams,
   RequestSettings,
-} from "../types";
+} from "../types.js";
 
 export default async function animateSkeletonFromText(
   clientSettings: RequestSettings,

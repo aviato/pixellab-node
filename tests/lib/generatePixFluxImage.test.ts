@@ -1,11 +1,12 @@
-import { API } from "../../src/constants";
-import generatePixFluxImage from "../../src/lib/generatePixFluxImage";
-import { PixFluxImageGenerationParams } from "../../src/types";
+import { beforeAll, describe, expect, it } from 'vitest';
+import { API } from "../../src/constants.js";
+import generatePixFluxImage from "../../src/lib/generatePixFluxImage.js";
+import { PixFluxImageGenerationParams } from "../../src/types.js";
 import {
   createMockClientSettings,
   mockFetchSuccess,
   mockFetchNetworkError,
-} from "../utils";
+} from "../utils/index.js";
 
 const mockPixFluxImageGenerationParams: PixFluxImageGenerationParams = {
   description: "a dog using a computer",

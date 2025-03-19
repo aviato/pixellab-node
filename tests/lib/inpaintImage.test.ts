@@ -1,11 +1,12 @@
-import inpaintImage from "../../src/lib/inpaintImage";
+import { beforeAll, describe, expect, it } from 'vitest';
+import inpaintImage from "../../src/lib/inpaintImage.js";
 import {
   mockFetchSuccess,
   mockFetchNetworkError,
   createMockClientSettings,
-} from "../utils";
-import { InpaintImageParams } from "../../src/types";
-import { API } from "../../src/constants";
+} from "../utils/index.js";
+import { InpaintImageParams } from "../../src/types.js";
+import { API } from "../../src/constants.js";
 
 const mockInpaintImageParams: InpaintImageParams = {
   description: "a cat wearing a crown",

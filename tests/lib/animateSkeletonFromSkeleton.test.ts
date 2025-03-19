@@ -1,12 +1,16 @@
-import animateSkeletonFromSkeleton from "../../src/lib/animateSkeletonFromSkeleton";
+import { beforeAll, describe, expect, it } from 'vitest';
+import animateSkeletonFromSkeleton from "../../src/lib/animateSkeletonFromSkeleton.js";
 import {
   mockFetchSuccess,
   mockFetchNetworkError,
   createMockClientSettings,
-} from "../utils";
-import { AnimateFromSkeletonParams, SkeletonKeypoints } from "../../src/types";
+} from "../utils/index.js";
+import {
+  AnimateFromSkeletonParams,
+  SkeletonKeypoints,
+} from "../../src/types.js";
 import mockSkeletonKeypoints from "../data/mockSkeletonKeypoints.json";
-import { API } from "../../src/constants";
+import { API } from "../../src/constants.js";
 
 const mockAnimateSkeletonParams: AnimateFromSkeletonParams = {
   reference_image: {

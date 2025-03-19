@@ -1,9 +1,9 @@
-import { API } from "../constants";
+import { API } from "../constants.js";
 import {
   ImageGenerationResponse,
   RequestSettings,
   RotateImageParams,
-} from "../types";
+} from "../types.js";
 
 export default async function rotateImage(
   clientSettings: RequestSettings,

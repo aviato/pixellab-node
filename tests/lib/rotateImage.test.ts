@@ -1,11 +1,12 @@
-import rotateImage from "../../src/lib/rotateImage";
+import { beforeAll, describe, expect, it } from 'vitest';
+import rotateImage from "../../src/lib/rotateImage.js";
 import {
   mockFetchSuccess,
   mockFetchNetworkError,
   createMockClientSettings,
-} from "../utils";
-import { RotateImageParams, ImageGenerationResponse } from "../../src/types";
-import { API } from "../../src/constants";
+} from "../utils/index.js";
+import { RotateImageParams } from "../../src/types.js";
+import { API } from "../../src/constants.js";
 
 const mockRotateImageParams: RotateImageParams = {
   from_image: {

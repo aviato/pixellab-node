@@ -1,10 +1,11 @@
-import { API } from "../../src/constants";
-import getBalance from "../../src/lib/getBalance";
+import { beforeAll, describe, expect, it } from 'vitest';
+import { API } from "../../src/constants.js";
+import getBalance from "../../src/lib/getBalance.js";
 import {
   mockFetchSuccess,
   mockFetchNetworkError,
   createMockClientSettings,
-} from "../utils";
+} from "../utils/index.js";
 
 const mockBalanceResponse = {
   usd: 25.75,

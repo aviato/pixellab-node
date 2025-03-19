@@ -1,3 +1,5 @@
+import { vi } from 'vitest';
+
 export function createMockClientSettings() {
   const FAKE_API_KEY = "abc-super-secret-key-123";
   return {
@@ -12,7 +14,7 @@ export function createMockClientSettings() {
 export const mockFetchSuccess = function <T extends Record<string, unknown>>(
   data: T
 ): void {
-  global.fetch = jest.fn().mockImplementation(() =>
+  global.fetch = vi.fn().mockImplementation(() =>
     Promise.resolve({
       ok: true,
       json: () => Promise.resolve(data),
@@ -42,7 +44,7 @@ export const mockFetchError = (
   statusText = "Internal Server Error",
   errorData = {}
 ) => {
-  global.fetch = jest.fn().mockImplementation(() =>
+  global.fetch = vi.fn().mockImplementation(() =>
     Promise.resolve({
       ok: false,
       json: () => Promise.resolve(errorData),
@@ -57,7 +59,7 @@ export const mockFetchError = (
 
 // Mock network error
 export const mockFetchNetworkError = () => {
-  global.fetch = jest
+  global.fetch = vi
     .fn()
     .mockImplementation(() =>
       Promise.reject(new Error("Network request failed"))

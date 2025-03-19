@@ -1,5 +1,5 @@
-import { API } from "../constants";
-import { BalanceResponse, RequestSettings } from "../types";
+import { API } from "../constants.js";
+import { BalanceResponse, RequestSettings } from "../types.js";
 
 export default async function getBalance(
   requestSettings: RequestSettings

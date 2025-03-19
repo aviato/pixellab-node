@@ -1,11 +1,12 @@
-import animateSkeletonFromText from "../../src/lib/animateSkeletonFromText";
+import { beforeAll, describe, expect, it } from 'vitest';
+import animateSkeletonFromText from "../../src/lib/animateSkeletonFromText.js";
 import {
   mockFetchSuccess,
   mockFetchNetworkError,
   createMockClientSettings,
-} from "../utils";
-import { AnimateWithTextParams } from "../../src/types";
-import { API } from "../../src/constants";
+} from "../utils/index.js";
+import { AnimateWithTextParams } from "../../src/types.js";
+import { API } from "../../src/constants.js";
 
 const mockAnimateSkeletonParams: AnimateWithTextParams = {
   reference_image: {

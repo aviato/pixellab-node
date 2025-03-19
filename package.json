@@ -1,17 +1,21 @@
 {
   "name": "pixellab-node",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "Node.js API for interacting with the [Pixel Lab Developer API](http://api.pixellab.ai/v1/docs)",
+  "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "clean": "rm -rf dist",
-    "prebuild": "npm test && npm run clean",
+    "prebuild": "npm run clean && npm test",
     "build": "tsc",
-    "test": "jest",
-    "test:watch": "jest --watch",
-    "test:coverage": "jest --coverage"
+    "test": "vitest run",
+    "test:watch": "vitest"
   },
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "prepublishOnly": "npm run build",
   "engines": {
     "node": ">=18.0.0"
@@ -29,12 +33,10 @@
   "author": "Ryan Price",
   "license": "ISC",
   "devDependencies": {
-    "@types/jest": "^29.5.14",
+    "@tsconfig/node18": "^18.2.4",
     "@types/node": "^22.13.8",
-    "jest": "^29.7.0",
-    "ts-jest": "^29.2.6",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.8.2"
+    "typescript": "^5.8.2",
+    "vitest": "^3.0.9"
   },
   "dependencies": {
     "dotenv": "^16.4.7"
