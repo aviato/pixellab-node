@@ -75,7 +75,7 @@ export type Shading =
   | "detailed shading"
   | "highly detailed shading";
 
-export type Detail = "low detail" | "medium detail" | "highly detail";
+export type Detail = "low detail" | "medium detail" | "highly detailed";
 
 export interface ImageSize {
   width: number;
